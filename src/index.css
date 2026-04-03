@@ -46,15 +46,30 @@ body {
 			var(--color-doc-bg-via) 45%,
 			#07120c 100%
 		);
-	background-attachment: fixed;
+	/* scroll (not fixed) avoids blurry/janky repaints on many GPUs while scrolling */
+	background-attachment: scroll;
+	-webkit-font-smoothing: antialiased;
 }
 
-.doc-grid-bg {
+/**
+ * Decorative grid only — must sit behind content in its own layer.
+ * Never put this class on a wrapper that includes text: mask-image would fade
+ * body copy and feels “blurry” when scrolling.
+ */
+.doc-grid-bg-layer {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
 	background-image:
 		linear-gradient(rgba(46, 230, 214, 0.04) 1px, transparent 1px),
 		linear-gradient(90deg, rgba(46, 230, 214, 0.04) 1px, transparent 1px);
 	background-size: 48px 48px;
-	mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent);
+	mask-image: radial-gradient(
+		ellipse 80% 70% at 50% 0%,
+		black 0%,
+		transparent 78%
+	);
+	pointer-events: none;
 }
 
 .focus-ring:focus-visible {

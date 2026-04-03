@@ -58,7 +58,7 @@ export function DocSeekAppPreviewClip({
 						doctor matches on a separate results page.
 					</p>
 					<div
-						className="pointer-events-none mt-8 flex w-full max-w-[340px] items-center gap-3 rounded-full border border-white/10 bg-[#060a14]/70 py-1.5 pl-4 pr-1.5 shadow-inner shadow-black/40 backdrop-blur-sm sm:max-w-[380px]"
+						className="pointer-events-none mt-8 flex w-full max-w-[340px] items-center gap-3 rounded-full border border-white/10 bg-[#060a14]/90 py-1.5 pl-4 pr-1.5 shadow-inner shadow-black/40 sm:max-w-[380px]"
 						aria-hidden
 					>
 						<Search
