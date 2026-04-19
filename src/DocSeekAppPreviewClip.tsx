@@ -15,7 +15,7 @@ export function DocSeekAppPreviewClip({
 			href={appHomeHref}
 			data-testid="app-preview-clip"
 			className="focus-ring group relative isolate block max-w-md lg:max-w-none lg:justify-self-end"
-			aria-label="Open DocSeek app to try the search experience"
+			aria-label="Open DocSeek app to try the search experience for Pittsburgh-area UPMC care"
 		>
 			<div
 				className={[

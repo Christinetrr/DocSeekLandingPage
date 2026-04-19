@@ -6,6 +6,7 @@
 		"dev": "vite dev --port 5174",
 		"build": "vite build",
 		"preview": "vite preview",
+		"start": "node scripts/railway-serve.mjs",
 		"test": "vitest run",
 		"lint": "biome lint",
 		"check": "biome check"
@@ -15,6 +16,7 @@
 		"lucide-react": "^0.545.0",
 		"react": "^19.2.0",
 		"react-dom": "^19.2.0",
+		"react-router-dom": "^7.14.1",
 		"tailwindcss": "^4.1.18"
 	},
 	"devDependencies": {

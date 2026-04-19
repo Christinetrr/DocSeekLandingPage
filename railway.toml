@@ -1,0 +1,10 @@
+# Deploy this service with Railway root set to this directory (`landingPage/` in the monorepo).
+# Nixpacks runs `npm run build` then `npm run start` (static `dist/` + SPA fallback via `serve`).
+
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "npm run start"
+healthcheckPath = "/"
+healthcheckTimeout = 120

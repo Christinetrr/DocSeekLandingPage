@@ -3,6 +3,3 @@ dist
 .env
 *.local
 .DS_Store
-
-# Screen recording exceeds GitHub’s 100 MB limit — use VITE_QUICK_DEMO_VIDEO_URL in deploy env.
-public/quick_demo.mov
