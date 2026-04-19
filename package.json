@@ -2,6 +2,9 @@
 	"name": "docseek-landing",
 	"private": true,
 	"type": "module",
+	"engines": {
+		"node": ">=20.19.0"
+	},
 	"scripts": {
 		"dev": "vite dev --port 5174",
 		"build": "vite build",
