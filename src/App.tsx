@@ -2,7 +2,6 @@ import {
 	Activity,
 	ChevronRight,
 	MapPin,
-	Play,
 	Shield,
 	Sparkles,
 	Stethoscope,
@@ -109,7 +108,7 @@ export function App() {
 								confidence.
 							</p>
 
-							<div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+							<div className="mt-10 flex justify-center">
 								<a
 									href={appHome}
 									data-testid="cta-primary"
@@ -117,15 +116,6 @@ export function App() {
 								>
 									Start physician search
 									<Sparkles className="h-4 w-4 opacity-90" aria-hidden />
-								</a>
-								<a
-									href="#how-it-works"
-									className="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-3.5 text-base font-medium text-white transition hover:bg-white/[0.07] sm:w-auto"
-								>
-									<span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
-										<Play className="h-4 w-4 fill-current" aria-hidden />
-									</span>
-									How it works
 								</a>
 							</div>
 						</div>
