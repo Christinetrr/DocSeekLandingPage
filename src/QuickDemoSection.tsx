@@ -3,10 +3,10 @@ import {
 	captionCuesToWebVtt,
 	QUICK_DEMO_CAPTION_CUES,
 } from "./quickDemoCaptionCues";
-
-const DEMO_SRC = "/quick_demo.mov";
+import { quickDemoVideoSrc } from "./quickDemoVideoSrc";
 
 export function QuickDemoSection() {
+	const demoSrc = quickDemoVideoSrc();
 	const sectionRef = useRef<HTMLElement>(null);
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const [captionBlobUrl, setCaptionBlobUrl] = useState<string | null>(null);
@@ -134,7 +134,14 @@ export function QuickDemoSection() {
 						aria-label="Screen recording of the DocSeek application"
 						aria-describedby="quick-demo-transcript"
 					>
-						<source src={DEMO_SRC} type="video/quicktime" />
+						<source
+							src={demoSrc}
+							type={
+								demoSrc.toLowerCase().endsWith(".mp4")
+									? "video/mp4"
+									: "video/quicktime"
+							}
+						/>
 						{captionBlobUrl ? (
 							<track
 								kind="captions"
@@ -146,7 +153,7 @@ export function QuickDemoSection() {
 						) : null}
 						Your browser may not support embedded QuickTime video.{" "}
 						<a
-							href={DEMO_SRC}
+							href={demoSrc}
 							className="text-teal-300 underline underline-offset-2"
 						>
 							Download the demo

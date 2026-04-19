@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
 	readonly VITE_DOCSEEK_APP_URL?: string;
+	readonly VITE_QUICK_DEMO_VIDEO_URL?: string;
 	readonly VITEST?: boolean;
 }
 
