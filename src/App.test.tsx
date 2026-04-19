@@ -9,12 +9,10 @@ afterEach(() => {
 });
 
 describe("App", () => {
-	test("renders brand in header banner and primary navigation landmark", () => {
+	test("renders brand in header banner", () => {
 		render(<App />);
 		const banner = screen.getByRole("banner");
 		expect(banner.textContent).toContain("DocSeek");
-		const nav = screen.getByRole("navigation", { name: "Primary" });
-		expect(nav.textContent).toContain("How it works");
 	});
 
 	test("hero headline includes UPMC physician messaging", () => {
@@ -25,6 +23,22 @@ describe("App", () => {
 				name: /UPMC physician/i,
 			}),
 		).toBeTruthy();
+	});
+
+	test("quick demo section is present with demo video", () => {
+		render(<App />);
+		expect(
+			screen.getByRole("heading", { name: /See DocSeek in action/i }),
+		).toBeTruthy();
+		expect(
+			screen.getByLabelText(/Screen recording of the DocSeek application/i),
+		).toBeTruthy();
+	});
+
+	test("quick demo includes transcript for captions", () => {
+		render(<App />);
+		expect(screen.getByText(/Transcript \(audio/i)).toBeTruthy();
+		expect(screen.getByText(/Welcome to DocSeek/i)).toBeTruthy();
 	});
 
 	test("primary CTA links to VITE_DOCSEEK_APP_URL with trailing slash", () => {

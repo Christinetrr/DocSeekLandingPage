@@ -8,13 +8,7 @@ import {
 } from "lucide-react";
 import { docseekAppHomeHref } from "./appUrl";
 import { DocSeekAppPreviewClip } from "./DocSeekAppPreviewClip";
-
-const navLinks = [
-	{ href: "#how-it-works", label: "How it works" },
-	{ href: "#specialties", label: "Specialties" },
-	{ href: "#trust", label: "Trust" },
-	{ href: "#faq", label: "FAQ" },
-] as const;
+import { QuickDemoSection } from "./QuickDemoSection";
 
 const trustAvatars = ["UP", "DS", "PC", "MD", "++"] as const;
 
@@ -35,7 +29,7 @@ export function App() {
 			<div className="doc-grid-bg-layer" aria-hidden />
 			<div className="relative z-10 flex flex-col">
 				<header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#050816]/95">
-					<div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+					<div className="mx-auto flex max-w-6xl items-center px-4 py-3 sm:px-6">
 						<a
 							href="#top"
 							className="focus-ring flex items-center gap-2 rounded-lg text-lg font-semibold tracking-tight text-white"
@@ -44,27 +38,6 @@ export function App() {
 								<Stethoscope className="h-4 w-4 text-teal-300" aria-hidden />
 							</span>
 							DocSeek
-						</a>
-						<nav
-							className="hidden items-center gap-1 rounded-full border border-white/[0.08] bg-white/[0.03] px-1 py-1 md:flex"
-							aria-label="Primary"
-						>
-							{navLinks.map(({ href, label }) => (
-								<a
-									key={href}
-									href={href}
-									className="focus-ring rounded-full px-3 py-1.5 text-sm text-doc-muted transition-colors hover:bg-white/[0.06] hover:text-white"
-								>
-									{label}
-								</a>
-							))}
-						</nav>
-						<a
-							href={appHome}
-							className="focus-ring inline-flex items-center gap-1.5 rounded-full bg-linear-to-r from-teal-400 to-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-[0_0_24px_-4px_rgba(46,230,214,0.55)] transition hover:brightness-110"
-						>
-							Start search
-							<ChevronRight className="h-4 w-4" aria-hidden />
 						</a>
 					</div>
 				</header>
@@ -135,6 +108,8 @@ export function App() {
 								))}
 							</div>
 						</div>
+
+						<QuickDemoSection />
 
 						<div
 							id="how-it-works"
@@ -321,21 +296,6 @@ export function App() {
 						</p>
 					</div>
 				</footer>
-
-				<nav
-					className="fixed bottom-4 left-1/2 z-40 flex -translate-x-1/2 gap-1 rounded-full border border-white/[0.1] bg-[#050816]/95 px-2 py-2 shadow-lg md:hidden"
-					aria-label="Section shortcuts"
-				>
-					{navLinks.map(({ href, label }) => (
-						<a
-							key={href}
-							href={href}
-							className="focus-ring rounded-full px-3 py-2 text-xs font-medium text-white/80"
-						>
-							{label.split(" ")[0]}
-						</a>
-					))}
-				</nav>
 			</div>
 		</div>
 	);
